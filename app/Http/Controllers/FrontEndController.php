@@ -14,6 +14,11 @@ class FrontEndController extends Controller
      */
     public function index()
     {
-        return view('frontend.main');
+        return view('frontend.layout.main');
+    }
+
+    public function gethalamanmenu()
+    {
+        return view('frontend.menu.index');
     }
 }

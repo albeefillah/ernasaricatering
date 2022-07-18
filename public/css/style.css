@@ -432,6 +432,59 @@ html, body{ height: 100%; }
 	padding-bottom:35px;
 	margin:0px;
 }
+.testimonial-carousel .owl-item .testimonial-item,
+.testimonial-carousel .owl-item.center .testimonial-item * {
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item * {
+    color: var(--light) !important;
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #CCCCCC;
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.book-btn2 a{
+	background:#e75b1e;
+	color: #fff;
+	min-width: 219px;
+    padding: 10.5px 20px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 800;
+	text-transform:uppercase;
+	font-size:18px;
+}
+.book-btn2 a:hover{
+	border:3px solid #e75b1e;
+	background:none;
+    color: #000;
+}
 
 .book-btn a{
 	/*background:#e75b1e;*/
@@ -448,12 +501,13 @@ html, body{ height: 100%; }
 	border:3px solid red;
 	background:none;
 }
+
 .hvr-underline-from-center {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px transparent;
+    box-shadow: 0 0 1px;
     position: relative;
     overflow: hidden;
 }
