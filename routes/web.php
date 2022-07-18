@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('frontend');
+Route::get('/backend-page', [App\Http\Controllers\BackendController::class, 'index']);
