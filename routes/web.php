@@ -15,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index']);
 Route::get('/halaman_menu', [App\Http\Controllers\FrontEndController::class, 'gethalamanmenu']);
-Route::get('/backend-page', [App\Http\Controllers\BackendController::class, 'index']);
+Route::get('/backend-page', [App\Http\Controllers\BackendController::class, 'index'])->name('dashboard');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
