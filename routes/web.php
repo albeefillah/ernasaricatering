@@ -20,3 +20,15 @@ Route::get('/backend-page', [App\Http\Controllers\BackendController::class, 'ind
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Akun
+// Route::prefix('user')->middleware('admin', 'auth')->group(function () {
+    Route::prefix('user')->group(function () {
+        Route::get('/', [App\Http\Controllers\Backend\UserController::class, 'index'])->name('user.index');
+        Route::get('/create', [App\Http\Controllers\Backend\UserController::class, 'create'])->name('user.create');
+        Route::post('/store', [App\Http\Controllers\Backend\UserController::class, 'store'])->name('user.store');
+        Route::get('/edit/{id}', [App\Http\Controllers\Backend\UserController::class, 'edit'])->name('user.edit');
+        Route::post('/update/{id}', [App\Http\Controllers\Backend\UserController::class, 'update'])->name('user.update');
+        Route::get('/destroy/{id}', [App\Http\Controllers\Backend\UserController::class, 'destroy'])->name('user.destroy');
+    });
+    

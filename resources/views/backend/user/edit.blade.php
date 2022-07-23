@@ -1,0 +1,89 @@
+@extends('backend/layout-master')
+@section('content')
+      <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Ubah Data User</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+   
+
+
+    <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                {{-- <div class="card-header">
+                  <h3 class="card-title">Silahkan isi data dibawah</h3>
+                </div> --}}
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form method="POST" name="FormTambah" onsubmit="return Validation()" enctype="multipart/form-data"
+                action="{{ route('user.update', $user->id) }}">
+                 @csrf
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="nama">Nama</label>
+                      <input type="text" class="form-control" id="nama" name="nama" value="{{ $user->name }}" placeholder="Masukan nama">
+                    </div>
+                    <div class="form-group">
+                      <label for="username">Username</label>
+                      <input type="text" class="form-control" id="username" name="username" value="{{ $user->username }}" placeholder="Masukan username">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" id="email" name="email" value="{{ $user->email  }}" placeholder="Masukan email">
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    </div>
+                    
+                    {{-- <div class="form-group">
+                      <label for="password_confirmation">Konfirmasi Password</label>
+                      <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Konfifmasi Password">
+                    </div> --}}
+
+                    <div class="form-group">
+                        <label for="level">Pilih level</label>
+                        <select class="custom-select form-control-border" name="id_level" id="level">
+                            <option>Pilih Level</option>
+                        @foreach ($level as $item)
+                            <option value="{{ $item->id }}" {{ $item->id == $user->id_level ? 'selected' : '' }}>{{ $item->level }}</option>
+                        @endforeach
+                        </select>
+                    </div>
+
+                    
+                    <div class="form-group">
+                      <label for="password">Foto Profil</label>
+                      <input type="file" name="foto" id="foto" class="form-control input-md">
+                    </div>
+                     
+
+                  </div>
+                  <!-- /.card-body -->
+  
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="{{ route('user.index') }}" class="btn btn-danger">Kembali</a>
+                  </div>
+                </form>
+              </div>
+              <!-- /.card -->
+  
+        </div><!-- /.container-fluid -->
+      </section>
+    <!-- /.content -->
+  </div>
+@endsection
