@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('/') }}css/bootstrap.min.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="{{ asset('/') }}css/style.css">
+    <link rel="shortcut icon" href="{{ asset('backend/dist/img/ernasarilogo.png') }}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('/') }}css/responsive.css">
     <!-- color -->

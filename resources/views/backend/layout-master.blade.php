@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{ asset('') }}backend/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="shortcut icon" href="{{ asset('backend/dist/img/ernasarilogo.png') }}">
   {{-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> --}}
   <!-- Tempusdominus Bootstrap 4 -->
   <link rel="stylesheet" href="{{ asset('') }}backend/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
@@ -198,7 +199,56 @@
     <!-- /.sidebar -->
   </aside>
 
+  <div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+
+  <!-- failed validation -->
+  @if(session()->has('success'))
+  <div class="row-md-5">
+      <div class="alert alert-success">
+      <center>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+          &times;
+          </button>
+          <strong>Succes</strong>
+          {{ session()->get('success') }}
+      </center>
+      </div>
+  </div>
+  @endif
+  
+  <!-- Failed validation -->
+  @if(session()->has('failed'))
+  <div class="row-md-5">
+      <div class="alert alert-danger">
+      <center>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+          &times;
+          </button>
+          <strong>Failed</strong>
+          {{ session()->get('failed') }}
+      </center>
+      </div>
+  </div>
+  @endif
+
+  <!-- Warning validation -->
+  @if(session()->has('warning'))
+  <div class="row-md-5">
+      <div class="alert alert-warning">
+      <center>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+          &times;
+          </button>
+          <strong>Warning!</strong>
+          {{ session()->get('warning') }}
+      </center>
+      </div>
+  </div>
+  @endif
+
   @yield('content')
+  </div>
 
   <!-- /.content-wrapper -->
   <footer class="main-footer">

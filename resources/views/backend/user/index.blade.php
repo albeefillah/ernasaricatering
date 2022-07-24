@@ -1,24 +1,16 @@
 @extends('backend/layout-master')
 @section('content')
       <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Manajemen User</h1>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
+  
+    
     <!-- /.content-header -->
     <div class="card">
       <div class="card-header">
-        <a href="{{ route('user.create') }}" class="btn btn-success">+ Tambah User</a>
+        <h2>Manajemen User</h2>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
+        <a href="{{ route('user.create') }}" class="btn btn-success" style="margin-bottom:10px;">+ Tambah User</a>
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
@@ -54,7 +46,4 @@
       <!-- /.card-body -->
     </div>
     <!-- /.card -->
-  </div>
-    <!-- /.content -->
-  </div>
 @endsection

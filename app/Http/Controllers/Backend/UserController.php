@@ -59,8 +59,8 @@ class UserController extends Controller
 
         ]);
 
-         
-        return redirect()->route('user.index')->with('status', 'User berhasil ditambahkan');
+        session()->flash('success', 'Data berhasil ditambahkan');
+        return redirect()->route('user.index');
         
        
     }
@@ -130,7 +130,8 @@ class UserController extends Controller
             'foto'        => $savefoto,
         ]);
 
-        return redirect()->route('user.index')->with('status', 'Data berhasil diubah');
+        session()->flash('success', 'Data berhasil diubah');
+        return redirect()->route('user.index');
     }
 
     /**
@@ -146,6 +147,8 @@ class UserController extends Controller
             unlink('storage/fotouser/' . $user->foto);
         }
         $user->delete();
+
+        session()->flash('success', 'Data berhasil dihapus');
 
         return redirect()->back();
     }
