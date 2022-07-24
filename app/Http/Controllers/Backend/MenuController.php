@@ -38,7 +38,25 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $date = date('Ymdhs');
+        if ($request->hasFile('foto')) {
+            $destination = 'storage/fotomenu/';
+            $filename    = $request->file('foto');
+            $filename->move($destination, (int)$date . '.' . $filename->getClientOriginalExtension());
+        }
+       
+       
+        $menu = Menu::create([
+            'nama_menu'   => $request['nama_menu'],
+            'harga'       => $request['harga'],
+            'tipe'        => $request['tipe'],
+            'deskripsi'   => $request['deskripsi'],
+            'foto'        => (int)$date . '.' . $filename->getClientOriginalExtension(),
+
+        ]);
+
+        session()->flash('success', 'Data berhasil ditambahkan');
+        return redirect()->route('menu.index');
     }
 
     /**
@@ -73,7 +91,37 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $menu = Menu::find($request->id);
+
+        $date = date('Ymdhs');
+        if ($request->file('foto')) {
+
+            $foto = $request->file('foto');
+            $savefoto = (int)$date . '.' . $foto->getClientOriginalExtension();
+
+            if ($menu->foto != null) {
+                if (file_exists('storage/fotomenu/' . $menu->foto)) {
+                    $delete_foto = unlink('storage/fotomenu/' . $menu->foto);
+                }
+                $foto->move('storage/fotomenu/', $savefoto);
+            } else {
+                $foto->move('storage/fotomenu/', $savefoto);
+                $savefoto = $savefoto;
+            }
+        } else {
+            $savefoto = $menu->foto;
+        }
+
+        $menu->update([
+            'nama_menu'   => $request['nama_menu'],
+            'harga'       => $request['harga'],
+            'tipe'        => $request['tipe'],
+            'deskripsi'   => $request['deskripsi'],
+            'foto'        => $savefoto,
+        ]);
+
+        session()->flash('success', 'Data berhasil diubah');
+        return redirect()->route('menu.index');
     }
 
     /**
@@ -84,6 +132,14 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $menu = Menu::find($id);
+        if ($menu->foto != null) {
+            unlink('storage/fotomenu/' . $menu->foto);
+        }
+        $menu->delete();
+
+        session()->flash('success', 'Data berhasil dihapus');
+
+        return redirect()->back();
     }
 }

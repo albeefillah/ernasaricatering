@@ -27,7 +27,7 @@
             @foreach ($menu as $key => $item)
             <tr>
               <td>{{ $key+1 }}</td>
-              <td><img src="{{ asset('storage/fotomenu/'. $item->foto) }}" alt="" width="50%"></td>
+              <td style="width:100px;"><img src="{{ asset('storage/fotomenu/'. $item->foto) }}" width="70%" ></td>
               <td>{{ $item->nama_menu }}</td>
               <td>{{ $item->harga }}</td>
               <td>{{ $item->deskripsi }}</td>
