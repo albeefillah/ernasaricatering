@@ -105,9 +105,15 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link" href="#" role="button">
+        <a class="nav-link" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
           <i class="fas fa-power-off"></i>
         </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+          @csrf
+      </form>
       </li>
     </ul>
   </nav>
@@ -168,7 +174,7 @@
           </li> --}}
 
           <li class="nav-item">
-            <a href="{{ asset('') }}backend/pages/widgets.html" class="nav-link">
+            <a href="{{ route('dashboard') }}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard

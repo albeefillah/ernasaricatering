@@ -19,16 +19,16 @@
                   <div class="card-body">
                     <div class="form-group">
                       <label for="nama_menu">Nama menu</label>
-                      <input type="text" class="form-control" value="{{ $menu->nama_menu }}" id="nama_menu" name="nama_menu" placeholder="Masukan menu makanan">
+                      <input type="text" class="form-control" required value="{{ $menu->nama_menu }}" id="nama_menu" name="nama_menu" placeholder="Masukan menu makanan">
                     </div>
                     <div class="form-group">
                       <label for="harga">Harga</label>
-                      <input type="number" class="form-control" value="{{ $menu->harga }}" id="harga" name="harga" placeholder="Masukan harga">
+                      <input type="number" class="form-control" required value="{{ $menu->harga }}" id="harga" name="harga" placeholder="Masukan harga">
                     </div>
                   
                     <div class="form-group">
                         <label for="level">Pilih tipe</label>
-                        <select class="custom-select form-control-border" name="tipe" id="level">
+                        <select class="custom-select form-control-border" required name="tipe" id="level">
                             <option>Pilih tipe</option>
                             <option value="Paket" {{ $menu->tipe == 'Paket' ? 'selected' : '' }}>Paket</option>
                             <option value="Satuan" {{ $menu->tipe == 'Satuan' ? 'selected' : '' }}>Satuan</option>
@@ -37,7 +37,7 @@
 
                     <div class="form-group">
                         <label for="deskripsi">Deskripsi Makanan</label>
-                        <textarea class="form-control" id="deskripsi" rows="5" name="deskripsi" placeholder="Deskripsi Makanan">{{ $menu->deskripsi }}</textarea>
+                        <textarea class="form-control" required id="deskripsi" rows="5" name="deskripsi" placeholder="Deskripsi Makanan">{{ $menu->deskripsi }}</textarea>
                       </div>
 
                     <div class="form-group">

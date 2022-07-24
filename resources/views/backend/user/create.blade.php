@@ -19,24 +19,24 @@
                   <div class="card-body">
                     <div class="form-group">
                       <label for="nama">Nama</label>
-                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan nama">
+                      <input type="text" class="form-control" required id="nama" name="nama" placeholder="Masukan nama">
                     </div>
                     <div class="form-group">
                       <label for="username">Username</label>
-                      <input type="text" class="form-control" id="username" name="username" placeholder="Masukan username">
+                      <input type="text" class="form-control" required id="username" name="username" placeholder="Masukan username">
                     </div>
                     <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" name="email" placeholder="Masukan email">
+                      <input type="email" class="form-control" required id="email" name="email" placeholder="Masukan email">
                     </div>
                     <div class="form-group">
                       <label for="password">Password</label>
-                      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                      <input type="password" class="form-control" required id="password" name="password" placeholder="Password">
                     </div>
                     
                     {{-- <div class="form-group">
                       <label for="password_confirmation">Konfirmasi Password</label>
-                      <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Konfifmasi Password">
+                      <input type="password" class="form-control" required id="password_confirmation" name="password_confirmation" placeholder="Konfifmasi Password">
                     </div> --}}
 
                     <div class="form-group">
