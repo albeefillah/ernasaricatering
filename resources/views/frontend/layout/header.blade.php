@@ -14,7 +14,7 @@
                                 </button>
                                 <div class="logo">
                                     <a class="navbar-brand js-scroll-trigger logo-header" href="#">
-                                        <img src="images/logo.png" alt="">
+                                        <img src="images/logoerna.png" alt="" width="30%">
                                     </a>
                                 </div>
                             </div>
