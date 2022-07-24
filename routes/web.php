@@ -32,3 +32,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
         Route::get('/destroy/{id}', [App\Http\Controllers\Backend\UserController::class, 'destroy'])->name('user.destroy');
     });
     
+// Menu
+// Route::prefix('menu')->middleware('admin', 'auth')->group(function () {
+    Route::prefix('menu')->group(function () {
+        Route::get('/', [App\Http\Controllers\Backend\MenuController::class, 'index'])->name('menu.index');
+        Route::get('/create', [App\Http\Controllers\Backend\MenuController::class, 'create'])->name('menu.create');
+        Route::post('/store', [App\Http\Controllers\Backend\MenuController::class, 'store'])->name('menu.store');
+        Route::get('/edit/{id}', [App\Http\Controllers\Backend\MenuController::class, 'edit'])->name('menu.edit');
+        Route::post('/update/{id}', [App\Http\Controllers\Backend\MenuController::class, 'update'])->name('menu.update');
+        Route::get('/destroy/{id}', [App\Http\Controllers\Backend\MenuController::class, 'destroy'])->name('menu.destroy');
+    });
+    
