@@ -35,7 +35,7 @@
               <td>
                 <center>
                   <a class="btn btn-info" href="{{ route('menu.edit', $item->id) }}" ><i class="fa fa-pencil-alt"></i></a>
-                  <a class="btn btn-danger" href="{{ route('menu.destroy', $item->id) }}"  onclick="return confirm('Apakah anda yakin akan menghapus data ini ?')" ><i class="fa fa-trash" ></i></a>
+                  <a class="btn btn-danger tombol-hapus" href="{{ route('menu.destroy', $item->id) }}"><i class="fa fa-trash" ></i></a>
                 </center>
               </td>
             </tr>
@@ -47,4 +47,37 @@
       <!-- /.card-body -->
     </div>
     <!-- /.card -->
+
+    @section('js')
+<script>
+
+$('.tombol-hapus').on('click', function (e) {            
+
+e.preventDefault();
+
+const href =$(this).attr('href');
+
+Swal.fire({
+title: 'Apakah anda yakin ?',
+text: "Menu makanan ini akan dihapus",
+type: 'warning',
+showCancelButton: true,
+confirmButtonColor: '#3085d6',
+cancelButtonColor: '#d33',
+confirmButtonText: 'Ya'
+}).then((result) => {
+if (result.value) {
+    document.location.href = href;
+    Swal.fire(
+  'Terhapus!',
+  'Data berhasil dihapus.',
+  'success'
+)
+}
+})
+
+});
+
+</script>
+@endsection
 @endsection
