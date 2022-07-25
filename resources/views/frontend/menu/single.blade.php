@@ -38,14 +38,16 @@
     <div class="site-section">
         <div class="container">
           <div class="row">
+
             <div class="col-md-6">
-              <img src="images/menu/paketpremium.jpg" alt="Image" class="img-fluid" width="100%">
+              <img src="{{ asset('storage/fotomenu/'. $menu->foto) }}" alt="Image" class="img-responsive" width="60%">
             </div>
             <div class="col-md-6">
-              <h2 class="text-black">Tank Top T-Shirt</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas, distinctio, aperiam, ratione dolore.</p>
-              <p class="mb-4">Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste, velit aperiam quis.</p>
-              <p><strong class="text-primary h4">Rp. 20.000</strong></p>
+              <h2 class="text-black">{{ $menu->nama_menu }}</h2>
+
+              <p class="mb-4">{{ $menu->deskripsi }}</p>
+              <p><strong class="text-primary h4">Rp. {{ number_format($menu->harga,0,'.','.')}}</strong></p>
+
               <div class="mb-5">
                 <div class="input-group mb-3" style="max-width: 120px;">
                 <div class="input-group-prepend">
@@ -58,7 +60,7 @@
               </div>
 
               </div>
-              <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+              <p><a href="" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
 
             </div>
           </div>

@@ -892,15 +892,14 @@ html, body{ height: 100%; }
 }
 
 .offer-item img {
-    width: 20%;
+    width: 30%;
     float: left;
-    padding: 10px;
     background: #fff;
-	border-radius: 50%;
+	border-radius: 30%;
 }
 
 .offer-item div {
-    width: 60%;
+    width: 30%;
     float: left;
     padding-left: 20px;
     padding-right: 20px;

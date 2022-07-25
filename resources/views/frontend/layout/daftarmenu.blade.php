@@ -9,27 +9,25 @@
                     <p class="title-caption text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
                 </div>
                 <div class="tab-menu">
-                    <div class="slider slider-nav">
+                    <div class="slider slider-nav" style="margin-left: 20%;">
+
                         <div class="tab-title-menu">
                             <h2>PAKET</h2>
-                            <p> <i class="flaticon-canape"></i> </p>
-                        </div>
-                        <div class="tab-title-menu">
-                            <h2>MAIN DISHES</h2>
                             <p> <i class="flaticon-dinner"></i> </p>
                         </div>
                         <div class="tab-title-menu">
-                            <h2>DESERTS</h2>
-                            <p> <i class="flaticon-desert"></i> </p>
+                            <h2>SATUAN</h2>
+                            <p> <i class="flaticon-canape"></i> </p>
                         </div>
                         <div class="tab-title-menu">
-                            <h2>DRINKS</h2>
-                            <p> <i class="flaticon-coffee"></i> </p>
+                            <h2>MENU UTAMA</h2>
+                            <p> <i class="flaticon-desert"></i> </p>
                         </div>
+
                     </div>
                     <div class="slider slider-single">
                         <div>
-                            @foreach ($menu as $key => $item)
+                            @foreach ($menupaket as $key => $item)
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                                 <div class="offer-item">
                                     <a href="{{ route('single_menu', $item->id) }}">
@@ -40,7 +38,7 @@
                                             {{ $item->deskripsi }}
                                         </p>
                                     </div>
-                                    <span class="offer-price">Rp. {{ number_format($item->harga,0)}}</span>
+                                    <span class="offer-price">Rp. {{ number_format($item->harga,0,'.','.')}}</span>
                                 </a>
                                 </div>
                             </div>
@@ -48,126 +46,41 @@
 
                         </div>
                         <div>
+                            @foreach ($menusatuan as $key => $item)
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                                 <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-04.jpg" alt="" class="img-responsive">
+                                    <a href="{{ route('single_menu', $item->id) }}">
+                                    <img src="{{ asset('storage/fotomenu/'. $item->foto) }}" alt="" class="img-responsive">
                                     <div>
-                                        <h3>MEAT FEAST PIZZA</h3>
+                                        <h3>{{ $item->nama_menu }}</h3>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            {{ $item->deskripsi }}
                                         </p>
                                     </div>
-                                    <span class="offer-price">$5</span>
+                                    <span class="offer-price">Rp. {{ number_format($item->harga,0,'.','.')}}</span>
+                                </a>
                                 </div>
                             </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                                <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-05.jpg" alt="" class="img-responsive">
-                                    <div>
-                                        <h3>CHICKEN TIKKA MASALA</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
-                                        </p>
-                                    </div>
-                                    <span class="offer-price">$15</span>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                                <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-06.jpg" alt="" class="img-responsive">
-                                    <div>
-                                        <h3>SPICY MEATBALLS</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
-                                        </p>
-                                    </div>
-                                    <span class="offer-price">$6.5</span>
-                                </div>
-                            </div>
-                            <!-- end col -->
+                            @endforeach
                         </div>
                         <div>
+
+                            @foreach ($menuutama as $key => $item)
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                                 <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-07.jpg" alt="" class="img-responsive">
+                                    <a href="{{ route('single_menu', $item->id) }}">
+                                    <img src="{{ asset('storage/fotomenu/'. $item->foto) }}" alt="" class="img-responsive">
                                     <div>
-                                        <h3>CHOCOLATE FUDGECAKE</h3>
+                                        <h3>{{ $item->nama_menu }}</h3>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            {{ $item->deskripsi }}
                                         </p>
                                     </div>
-                                    <span class="offer-price">$4.5</span>
+                                    <span class="offer-price">Rp. {{ number_format($item->harga,0,'.','.')}}</span>
+                                </a>
                                 </div>
                             </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                                <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-08.jpg" alt="" class="img-responsive">
-                                    <div>
-                                        <h3>CHICKEN TIKKA MASALA</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
-                                        </p>
-                                    </div>
-                                    <span class="offer-price">$9.5</span>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                                <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-09.jpg" alt="" class="img-responsive">
-                                    <div>
-                                        <h3>CHICKEN TIKKA MASALA</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
-                                        </p>
-                                    </div>
-                                    <span class="offer-price">$10</span>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                                <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-10.jpg" alt="" class="img-responsive">
-                                    <div>
-                                        <h3>MEAT FEAST PIZZA</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
-                                        </p>
-                                    </div>
-                                    <span class="offer-price">$12.5</span>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                                <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-09.jpg" alt="" class="img-responsive">
-                                    <div>
-                                        <h3>CHICKEN TIKKA MASALA</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
-                                        </p>
-                                    </div>
-                                    <span class="offer-price">$9.5</span>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                                <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-08.jpg" alt="" class="img-responsive">
-                                    <div>
-                                        <h3>CHICKEN TIKKA MASALA</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
-                                        </p>
-                                    </div>
-                                    <span class="offer-price">$5.5</span>
-                                </div>
-                            </div>
+                            @endforeach
                             <!-- end col -->
                         </div>
                     </div>
@@ -188,7 +101,7 @@
         <div class="banner-text">
             <div class="banner-cell">
                 <div class="book-btn2">
-                    <a href="{{ url('/halaman_menu')}}" class="table-btn hvr-underline-from-center2">Lihat Menu</a>
+                    <a href="{{ url('/halaman_menu')}}" class="table-btn hvr-underline-from-center2">Lihat Menu Selengkapnya</a>
                 </div>
 
             </div>

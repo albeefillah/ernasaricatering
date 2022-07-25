@@ -15,19 +15,26 @@ class FrontEndController extends Controller
      */
     public function index()
     {
-        $menu = Menu::all();
+        $menupaket = Menu::where('tipe', 'Paket')->skip(0)->take(5)->get();
+        $menusatuan = Menu::where('tipe', 'Satuan')->skip(0)->take(5)->get();
+        $menuutama = Menu::where('tipe', 'Menu Utama')->skip(0)->take(5)->get();
 
-        return view('frontend.layout.main',compact('menu'));
+        return view('frontend.layout.main',compact('menupaket','menusatuan','menuutama'));
     }
 
     public function gethalamanmenu()
     {
-        $menu = Menu::all();
-        return view('frontend.menu.index',compact('menu'));
+        $menupaket = Menu::where('tipe', 'Paket')->get();
+        $menusatuan = Menu::where('tipe', 'Satuan')->get();
+        $menuutama = Menu::where('tipe', 'Menu Utama')->get();
+        $menu = Menu::where('tipe', 'Paket')->first();
+
+        return view('frontend.menu.index',compact('menupaket','menusatuan','menuutama'));
     }
 
-    public function getsinglemenu()
+    public function getsinglemenu($id)
     {
-        return view('frontend.menu.single');
+        $menu = Menu::findOrFail($id);
+        return view('frontend.menu.single',compact('menu'));
     }
 }
