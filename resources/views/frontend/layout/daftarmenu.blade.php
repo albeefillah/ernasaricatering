@@ -29,45 +29,23 @@
                     </div>
                     <div class="slider slider-single">
                         <div>
+                            @foreach ($menu as $key => $item)
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                                 <div class="offer-item">
-                                    <img src="images/menu/paketpremium.jpg" alt="" class="img-responsive">
+                                    <a href="{{ route('single_menu', $item->id) }}">
+                                    <img src="{{ asset('storage/fotomenu/'. $item->foto) }}" alt="" class="img-responsive">
                                     <div>
-                                        <h3>PAKET PREMIUM</h3>
+                                        <h3>{{ $item->nama_menu }}</h3>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            {{ $item->deskripsi }}
                                         </p>
                                     </div>
-                                    <span class="offer-price">$8.5</span>
+                                    <span class="offer-price">Rp. {{ number_format($item->harga,0)}}</span>
+                                </a>
                                 </div>
                             </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                                <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-02.jpg" alt="" class="img-responsive">
-                                    <div>
-                                        <h3>MIXED SALAD</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
-                                        </p>
-                                    </div>
-                                    <span class="offer-price">$25</span>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                                <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-03.jpg" alt="" class="img-responsive">
-                                    <div>
-                                        <h3>BBQ CHICKEN WINGS</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
-                                        </p>
-                                    </div>
-                                    <span class="offer-price">$10</span>
-                                </div>
-                            </div>
-                            <!-- end col -->
+                            @endforeach
+
                         </div>
                         <div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">

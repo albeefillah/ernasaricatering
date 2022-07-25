@@ -11,13 +11,13 @@
 
                     <p>  Seiring berkembangnya jaman, kami para putra putri Ibu Een & Ibu Hj Nana Ratna beserta Sahabat dan Kerabat membangun suatu kerajaan bisnis yang bergerak dalam bidang Perdagangan dan Jasa. Berangkat dari usaha yang dibangun oleh ibu kami, maka kami memulai usaha dalam bidang Catering, Wedding Organizer dan Rumah Makan. </p>
 
-                
-                    <h3>Kualitas Produk</h3>
-                    <p> 
+
+                    {{-- <h3>Kualitas Produk</h3>
+                    <p>
                         Memenuhi kepuasan pelanggan merupakan salah satu tujuan perusahaan, oleh karena itu Erna Sari selalu mengutamakan kualitas dalam setiap proses pengolahan makanan kami, dalam hal ini di tekankan pada kualitas penggunaan bahan baku yang terbaik dan kebersihan dari setiap aspek penunjang yang di gunakan dalam proses produksi.
 
-                       </p>
-                
+                       </p> --}}
+
 
                 </div>
             </div>

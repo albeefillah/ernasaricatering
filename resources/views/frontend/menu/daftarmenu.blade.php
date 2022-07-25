@@ -2,10 +2,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <h2 class="block-title text-center">
+                    Daftar Menu
+                </h2>
+                    <p class="title-caption text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                </div>
                 <div class="tab-menu">
                     <div class="slider slider-nav">
                         <div class="tab-title-menu">
-                            <h2>STARTERS</h2>
+                            <h2>PAKET</h2>
                             <p> <i class="flaticon-canape"></i> </p>
                         </div>
                         <div class="tab-title-menu">
@@ -25,14 +31,16 @@
                         <div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
                                 <div class="offer-item">
-                                    <img src="images/menu-item-thumbnail-01.jpg" alt="" class="img-responsive">
+                                    <a href="{{ url('/single_menu') }}">
+                                    <img src="images/menu/paketpremium.jpg" alt="" class="img-responsive">
                                     <div>
-                                        <h3>GARLIC BREAD</h3>
+                                        <h3>PAKET PREMIUM</h3>
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
                                         </p>
                                     </div>
-                                    <span class="offer-price">$8.5</span>
+                                    <span class="offer-price">Rp. 20.000</span>
+                                </a>
                                 </div>
                             </div>
                             <!-- end col -->
@@ -189,15 +197,15 @@
                     </div>
                 </div>
                 <!-- end tab-menu -->
-              
+
             </div>
-           
+
             <!-- end col -->
         </div>
-       
-            
+
+
             <!-- end banner-static -->
-       
+
         <!-- end row -->
     </div>
 
