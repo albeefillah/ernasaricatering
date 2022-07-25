@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                       <label for="harga">Harga</label>
-                      <input type="number" class="form-control" required value="{{ $menu->harga }}" id="harga" name="harga" placeholder="Masukan harga">
+                      <input type="number" minlength="0" class="form-control" required value="{{ $menu->harga }}" id="harga" name="harga" placeholder="Masukan harga">
                     </div>
                   
                     <div class="form-group">
@@ -32,6 +32,10 @@
                             <option>Pilih tipe</option>
                             <option value="Paket" {{ $menu->tipe == 'Paket' ? 'selected' : '' }}>Paket</option>
                             <option value="Satuan" {{ $menu->tipe == 'Satuan' ? 'selected' : '' }}>Satuan</option>
+                            <option value="Menu Utama" {{ $menu->tipe == 'Menu Utama' ? 'selected' : '' }}>Menu Utama</option>
+                            <option value="Diskon" {{ $menu->tipe == 'Diskon' ? 'selected' : '' }}>Diskon</option>
+                            <option value="Desert" {{ $menu->tipe == 'Desert' ? 'selected' : '' }}>Desert</option>
+                            <option value="Minuman" {{ $menu->tipe == 'Minuman' ? 'selected' : '' }}>Minuman</option>
                         </select>
                     </div>
 

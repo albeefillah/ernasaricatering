@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                       <label for="harga">Harga</label>
-                      <input type="number" class="form-control" required id="harga" name="harga" placeholder="Masukan harga">
+                      <input type="number" minlength="0" class="form-control" required id="harga" name="harga" placeholder="Masukan harga">
                     </div>
                   
                     <div class="form-group">
@@ -32,6 +32,10 @@
                             <option>Pilih tipe</option>
                             <option value="Paket">Paket</option>
                             <option value="Satuan">Satuan</option>
+                            <option value="Menu Utama">Menu Utama</option>
+                            <option value="Diskon">Diskon</option>
+                            <option value="Desert">Desert</option>
+                            <option value="Minuman">Minuman</option>
                         </select>
                     </div>
 

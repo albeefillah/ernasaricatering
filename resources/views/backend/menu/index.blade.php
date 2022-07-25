@@ -19,7 +19,7 @@
             <th>Nama Menu</th>
             <th>Harga</th>
             <th>Deskripsi</th>
-            <th>Tipe</th>
+            <th>Kategori</th>
             <th>Aksi</th>
           </tr>
           </thead>
