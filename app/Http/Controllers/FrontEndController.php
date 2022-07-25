@@ -1,9 +1,10 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
 use App\Http\Controllers\Controller;
- 
+use App\Models\Backend\Menu;
+
 class FrontEndController extends Controller
 {
     /**
@@ -14,11 +15,19 @@ class FrontEndController extends Controller
      */
     public function index()
     {
-        return view('frontend.layout.main');
+        $menu = Menu::all();
+
+        return view('frontend.layout.main',compact('menu'));
     }
 
     public function gethalamanmenu()
     {
-        return view('frontend.menu.index');
+        $menu = Menu::all();
+        return view('frontend.menu.index',compact('menu'));
+    }
+
+    public function getsinglemenu()
+    {
+        return view('frontend.menu.single');
     }
 }
