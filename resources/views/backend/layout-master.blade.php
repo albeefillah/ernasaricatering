@@ -10,9 +10,9 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('') }}backend/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  {{-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> --}}
   <link rel="shortcut icon" href="{{ asset('backend/dist/img/ernasarilogo.png') }}">
-  {{-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> --}}
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Tempusdominus Bootstrap 4 -->
   <link rel="stylesheet" href="{{ asset('') }}backend/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
@@ -191,9 +191,17 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('menu.index') }}" class="nav-link">
-              <i class="nav-icon fa fa-pizza-slice"></i>
+              <i class="nav-icon fa fa-cutlery"></i>
               <p>
                 Menu Makanan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('menu.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-dollar"></i>
+              <p>
+                Transaksi
               </p>
             </a>
           </li>
