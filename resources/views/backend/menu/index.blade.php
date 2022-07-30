@@ -34,8 +34,8 @@
               <td>{{ $item->tipe }}</td>
               <td>
                 <center>
-                  <a class="btn btn-info" href="{{ route('menu.edit', $item->id) }}" ><i class="fa fa-pencil-alt"></i></a>
-                  <a class="btn btn-danger tombol-hapus" href="{{ route('menu.destroy', $item->id) }}"><i class="fa fa-trash" ></i></a>
+                  <a class="btn btn-info" href="{{ route('menu.edit', $item->id) }}" ><i class="fa fa-pencil"></i></a>
+                  <a class="btn btn-danger tombol-hapus" href="{{ route('menu.destroy', $item->id) }}"><i class="fas fa-trash" ></i></a>
                 </center>
               </td>
             </tr>
